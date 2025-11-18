@@ -119,6 +119,34 @@
             color: var(--primary-color);
         }
 
+        /* Estilos específicos para os links de PDF */
+        .pdf-links {
+            margin-top: 30px; 
+            padding-top: 20px; 
+            border-top: 1px solid #ccc;
+        }
+        .pdf-links h3 {
+            color: var(--primary-color); 
+            font-size: 1.5em; 
+            margin-bottom: 15px;
+        }
+        .pdf-links .pdf-item {
+            display: block; 
+            text-decoration: none; 
+            color: var(--primary-color); 
+            font-weight: bold; 
+            padding: 8px 0;
+            transition: color 0.2s;
+        }
+        .pdf-links .pdf-item:hover {
+            color: var(--price-color);
+        }
+        .pdf-icon {
+            font-size: 1.2em; 
+            margin-right: 10px;
+        }
+
+
         /* Caixa de Preço (Maior Impacto) */
         .price-box {
             background: var(--secondary-color);
@@ -241,14 +269,33 @@
                 <li><strong>Principais Ambientes Térreo:</strong> Sala de Estar (34,43 m²), Cozinha (17,04 m²), Garagem (32,11 m²), Serviço (7,00 m²).</li>
                 <li><strong>Lazer Térreo:</strong> Piscina (24,15 m²), Churrasqueira (14,05 m²), Sauna (4,72 m²), Varanda (17,29 m²).</li>
             </ul>
-        </section>
+            
+            <div class="pdf-links">
+                <h3 style="color: var(--primary-color); font-size: 1.5em; margin-bottom: 15px;">📥 Documentação Técnica para Download</h3>
+                <p>Clique nos links abaixo para visualizar ou fazer download dos projetos arquitetônicos detalhados:</p>
+                
+                <ul class="details-list" style="list-style: none; padding-left: 0;">
+                    <li>
+                        <a href="planta-baixa.pdf" target="_blank" class="pdf-item" style="display: flex; align-items: center;">
+                            <span class="pdf-icon">📄</span> Planta Baixa Térreo e 1º Piso (PDF)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="fachadas-cortes.pdf" target="_blank" class="pdf-item" style="display: flex; align-items: center;">
+                            <span class="pdf-icon">📐</span> Fachada Principal e Cortes Transversais (PDF)
+                        </a>
+                    </li>
+                </ul>
+                <p style="font-size: 0.9em; margin-top: 10px; font-style: italic;">(Os arquivos serão abertos em uma nova janela.)</p>
+            </div>
+            </section>
 
         <section class="content-section highlight-box">
             <h2 class="section-title" id="sistema">🚀 Nosso Sistema Monolítico: Vantagem, Tecnologia e Qualidade</h2>
-            <p>Construa com a **ZAPI SOLUÇÕES** e garanta a melhor tecnologia para sua casa.</p>
+            <p>Construa com a **EngeTec e a ZAPI SOLUÇÕES** e garanta a melhor tecnologia para sua Casa.</p>
             
             <ul class="included-list">
-                <li>Em Nosso Sistema Monolítico Com **EPS de Alta Densidade**: Máximo isolamento térmico e acústico.</li>
+                <li>**EPS de Alta Densidade**: Máximo isolamento térmico e acústico.</li>
                 <li>**Malha de Aço em CA-70 Galvanizado**: Produção exclusiva da GERDAU para ZAPI SOLUÇÕES.</li>
                 <li>**Tempo de Obra**: Sua obra totalmente entregue em **até 12 meses**.</li>
             </ul>
@@ -295,7 +342,7 @@
 
         <footer class="contact-footer">
             <h2>Quer saber mais? Fale Conosco Agora!</h2>
-            <p>Para aqueles que tenham dúvidas, será um prazer recebê-los em nossa fábrica na região Serrana do Rio, na cidade de Três Rios (30 minutos depois de Itaipava/Petrópolis).</p>
+            <p>Para aqueles que tenham dúvidas **sobre nosso sistema Monolítico**, será um prazer recebê-los em nossa fábrica na região Serrana do Rio, na cidade de Três Rios (30 minutos depois de Itaipava/Petrópolis).</p>
             <p>Lá poderemos apresentar, entre outros, nossos projetos em andamento e fazer uma visita em algumas de nossas obras.</p>
             <a href="https://wa.me/5521965125138?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Planta%2002%20(R%24%20450.000%2C00)%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20parcelamento%20em%2016x.">CLIQUE AQUI E CHAME NO WHATSAPP PRIVADO</a>
         </footer>
