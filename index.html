@@ -4,100 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASA TIPO 02 - Construção Monolítica - ZAPI SOLUÇÕES</title>
+    <title>PLANTA 02 - Construção Monolítica - ZAPI SOLUÇÕES</title>
     
     <style>
-        /* Estilos Gerais */
+        /* Variáveis de Cores (Profissionalismo e Facilidade de Mudança) */
+        :root {
+            --primary-color: #004d99; /* Azul Principal (Construtora) */
+            --secondary-color: #ffcc00; /* Amarelo Destaque */
+            --highlight-bg: #e6f7ff; /* Fundo Suave para Destaque */
+            --price-color: #d90000; /* Vermelho para Preço */
+            --success-color: #009900; /* Verde para Vantagens/Check */
+            --whatsapp-color: #25D366; /* Cor do WhatsApp */
+            --text-dark: #333;
+            --bg-light: #f4f4f9;
+        }
+
+        /* Estilos Base */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', 'Arial', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased; /* Melhor renderização de fonte */
         }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: auto;
-            overflow: hidden;
             padding: 20px 0;
         }
-        header {
-            background: #004d99; /* Azul forte para a Construtora */
+
+        /* Header e Título */
+        .header-main {
+            background: var(--primary-color);
             color: white;
             padding: 1.5em 0;
             text-align: center;
-            border-bottom: 5px solid #ffcc00; /* Destaque em amarelo */
+            border-bottom: 5px solid var(--secondary-color);
         }
-        header h1 {
+        .header-main h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.2em; /* Ajuste para melhor visualização em desktops */
             line-height: 1.2;
+            text-transform: uppercase;
         }
-        .section {
-            padding: 20px;
+        .header-main p {
+            margin-top: 5px;
+            font-size: 1.1em;
+        }
+
+        /* Seções */
+        .content-section {
+            padding: 25px;
             margin-bottom: 30px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        .section h2 {
-            color: #004d99;
-            border-bottom: 2px solid #ffcc00;
+        .content-section:hover {
+            transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+        }
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
             padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-size: 1.7em;
         }
-        /* Destaque para o Sistema Monolítico */
-        .highlight {
-            background-color: #e6f7ff;
-            padding: 20px;
-            border-left: 6px solid #004d99;
-            margin: 30px 0;
+
+        /* Destaque Monolítico */
+        .highlight-box {
+            background-color: var(--highlight-bg);
+            padding: 30px;
+            border-left: 6px solid var(--primary-color);
+            margin: 40px 0;
             border-radius: 8px;
         }
-        /* Caixa de Preço */
-        .price-box {
-            background: #ffcc00;
-            padding: 30px;
+
+        /* Imagem e Detalhes da Planta */
+        .image-placeholder {
             text-align: center;
-            border-radius: 10px;
-            margin: 40px 0;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #eee;
+            border-radius: 5px;
         }
-        .price-box h3 {
-            color: #333;
-            margin-top: 0;
-            font-size: 1.5em;
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
-        .price-box .price {
-            font-size: 3.5em;
-            color: #d90000; /* Vermelho para impacto no preço */
-            font-weight: bold;
-            margin: 10px 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        /* Estilos de Lista */
-        .plan-details, .included-items {
+        .details-list, .included-list {
             list-style: none;
             padding: 0;
         }
-        .plan-details li, .included-items li {
+        .details-list li, .included-list li {
             padding: 10px 0;
             border-bottom: 1px dashed #ccc;
             display: flex;
             align-items: center;
+            font-size: 1em;
         }
-        .plan-details li:before, .included-items li:before {
-            content: '✔️'; /* Ícone para as listas */
+        .details-list li::before, .included-list li::before {
+            content: '✅'; 
             margin-right: 10px;
-            color: #004d99;
+            color: var(--success-color);
             font-size: 1.1em;
         }
-        .plan-details li strong, .included-items li strong {
-            color: #004d99;
+        .included-list li strong {
+            color: var(--primary-color);
         }
+
+        /* Caixa de Preço (Maior Impacto) */
+        .price-box {
+            background: var(--secondary-color);
+            padding: 35px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 40px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 3px solid var(--primary-color);
+        }
+        .price-box h3 {
+            color: var(--text-dark);
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+        .price-box .price {
+            font-size: 4em;
+            color: var(--price-color);
+            font-weight: 900; /* Extra bold */
+            margin: 10px 0;
+            line-height: 1;
+        }
+        .price-box p {
+            font-size: 1.2em;
+        }
+
+        /* Lista de Condições/Vantagens */
         .offer-list {
             list-style-type: none;
             padding-left: 0;
@@ -105,180 +153,152 @@
         .offer-list li {
             margin-bottom: 15px;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 15px;
             background: #f0f0f5;
             border-radius: 5px;
-            border-left: 5px solid #009900; /* Verde para as Vantagens */
+            border-left: 5px solid var(--success-color); 
             line-height: 1.4;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .offer-list li:before {
-            content: '✍🏼';
+        .offer-list li::before {
+            content: '💡';
             margin-right: 10px;
         }
-        /* Imagem e Placeholder */
-        .image-placeholder {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #eee;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .image-placeholder img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-        /* Seção de Contato */
-        .contact {
+
+        /* Seção de Contato (Rodapé) */
+        .contact-footer {
             text-align: center;
             padding: 40px 0;
-            background: #003366;
+            background: var(--primary-color);
             color: white;
             border-radius: 0 0 8px 8px;
+            margin-top: 40px;
         }
-        .contact h2 {
+        .contact-footer h2 {
             color: white;
             border-bottom: none;
+            margin-bottom: 20px;
         }
-        .contact a {
+        .contact-footer a {
             display: inline-block;
-            background-color: #25D366; /* Cor do WhatsApp */
+            background-color: var(--whatsapp-color);
             color: white;
-            padding: 15px 30px;
-            margin-top: 15px;
+            padding: 15px 35px;
+            margin-top: 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.3em;
-            transition: background-color 0.3s;
+            font-size: 1.4em;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        .contact a:hover {
+        .contact-footer a:hover {
             background-color: #128C7E;
+            transform: translateY(-2px);
         }
 
-        /* ------------------------------------ */
-        /* RESPONSIVIDADE (MOBILE-FIRST) */
-        /* ------------------------------------ */
-
-        /* Para telas até 600px (Smartphones) */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8em; /* Reduz o tamanho do título principal */
-                padding: 0 10px;
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .header-main h1 {
+                font-size: 1.6em;
             }
-            .section {
-                padding: 15px;
-                margin-bottom: 20px;
-            }
-            .section h2 {
-                font-size: 1.4em; /* Reduz os títulos de seção */
-                margin-bottom: 15px;
-            }
-            .price-box .price {
-                font-size: 2.5em; /* Reduz o preço */
-            }
-            .contact a {
-                font-size: 1.1em; /* Reduz o botão de contato */
-                padding: 12px 20px;
-            }
-            .plan-details li, .included-items li, .offer-list li {
-                font-size: 0.95em; /* Ajusta o texto das listas */
-                padding: 8px 0;
-            }
-        }
-
-        /* Para telas entre 601px e 992px (Tablets) */
-        @media (min-width: 601px) and (max-width: 992px) {
-            header h1 {
-                font-size: 2.2em;
+            .section-title {
+                font-size: 1.5em;
             }
             .price-box .price {
                 font-size: 3em;
+            }
+            .contact-footer a {
+                font-size: 1.2em;
+                padding: 15px 25px;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="header-main">
         <div class="container">
-            <h1>CASA TIPO 02 - EXCLUSIVIDADE E INOVAÇÃO</h1>
-            <p>Seu novo lar com o **Sistema Monolítico de Alta Performance** da ZAPI SOLUÇÕES.</p>
+            <h1>PLANTA 02 - EXCLUSIVIDADE E INOVAÇÃO</h1>
+            <p>Seu novo lar com o Sistema Monolítico de Alta Performance da **ZAPI SOLUÇÕES**.</p>
         </div>
     </header>
 
     <div class="container">
         
-        <div class="section">
-            <h2 id="planta">✨ A Casa Tipo 02: 4 Quartos, 2 Suítes</h2>
-            [span_0](start_span)<p>Projeto de construção de residência unifamiliar no Condomínio Blue Lake Residence Club[span_0](end_span).</p>
+        <section class="content-section">
+            <h2 class="section-title" id="planta">✨ Planta 02: 4 Quartos, 2 Suítes</h2>
+            <p>Projeto de construção de residência unifamiliar situada no Condomínio Blue Lake Residence Club.</p>
 
             <div class="image-placeholder">
-                <img src="image.png" alt="Planta Baixa Colorida Casa Tipo 02" width="600">
+                <img src="planta-colorida.png" alt="Planta Baixa Colorida Planta 02" width="600">
                 <p><strong>[Imagem da Planta Baixa TÉRREO e 1º PISO - Render Colorido]</strong></p>
             </div>
 
-            <ul class="plan-details">
-                [span_1](start_span)<li><strong>Área Total Construída:</strong> 219,64 m²[span_1](end_span) (Térreo: 115,83 m² | 1º Piso: 102,81 m²) [span_2](start_span).</li>
-                <li><strong>Layout:</strong> 4 Quartos, sendo 2 Suítes[span_2](end_span).</li>
-                [span_3](start_span)<li><strong>Principais Ambientes Térreo:</strong> Sala de Estar (34,43 m²)[span_3](end_span)[span_4](start_span), Cozinha (17,04 m²)[span_4](end_span)[span_5](start_span), Garagem (32,11 m²)[span_5](end_span), Área de Lazer Externa Completa.</li>
-                [span_6](start_span)<li><strong>Lazer Térreo:</strong> Piscina (24,15 m²)[span_6](end_span)[span_7](start_span), Churrasqueira (14,05 m²)[span_7](end_span)[span_8](start_span), Sauna (4,72 m²)[span_8](end_span)[span_9](start_span), Varanda (17,29 m²)[span_9](end_span).</li>
+            <ul class="details-list">
+                <li><strong>Área Total Construída:</strong> 219,64 m² (Térreo: 115,83 m² | 1º Piso: 102,81 m²).</li>
+                <li><strong>Layout:</strong> 4 Quartos, sendo 2 Suítes.</li>
+                <li><strong>Principais Ambientes Térreo:</strong> Sala de Estar (34,43 m²), Cozinha (17,04 m²), Garagem (32,11 m²), Serviço (7,00 m²).</li>
+                <li><strong>Lazer Térreo:</strong> Piscina (24,15 m²), Churrasqueira (14,05 m²), Sauna (4,72 m²), Varanda (17,29 m²).</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section highlight">
-            <h2 id="sistema">🚀 Nosso Sistema Monolítico: Vantagem, Tecnologia e Qualidade</h2>
+        <section class="content-section highlight-box">
+            <h2 class="section-title" id="sistema">🚀 Nosso Sistema Monolítico: Vantagem, Tecnologia e Qualidade</h2>
             <p>Construa com a **ZAPI SOLUÇÕES** e garanta a melhor tecnologia para sua casa.</p>
             
-            <ul class="included-items">
-                <li>**EPS de Alta Densidade:** Máximo isolamento térmico e acústico.</li>
-                <li>**Malha de Aço:** Em CA-70 Galvanizado, produção exclusiva da GERDAU para ZAPI SOLUÇÕES.</li>
-                <li>**Tempo de Obra:** Sua obra totalmente entregue em **até 12 meses**.</li>
+            <ul class="included-list">
+                <li>Em Nosso Sistema Monolítico Com **EPS de Alta Densidade**: Máximo isolamento térmico e acústico.</li>
+                <li>**Malha de Aço em CA-70 Galvanizado**: Produção exclusiva da GERDAU para ZAPI SOLUÇÕES.</li>
+                <li>**Tempo de Obra**: Sua obra totalmente entregue em **até 12 meses**.</li>
             </ul>
-        </div>
+        </section>
         
-        <div class="section">
-            <h2 id="incluso">✅ Obras Entregues com TUDO Incluso!</h2>
+        <section class="content-section">
+            <h2 class="section-title" id="incluso">✅ Obras Entregues com TUDO Incluso!</h2>
             <p>O valor de investimento é pelo projeto **chave na mão** com acabamento de alto padrão, incluindo:</p>
-            <ul class="included-items">
+            <ul class="included-list">
                 <li>**Projetos Completos:** Estrutural, de Instalações, Isométricos e Luminotécnico.</li>
                 <li>**Execução:** Mão de Obra de toda a construção e acabamentos.</li>
                 <li>**Lazer Completo:** Piscina, Sauna à Vapor, Churrasqueira.</li>
                 <li>**Acabamentos Premium:** Granitos, Blindex, Esquadrias Linha GOLD e Revestimentos PORTO BELO (até R$ 80,00/m²).</li>
                 <li>**Infraestrutura:** Instalação Elétrica, Rede Estruturada, Previsão para Geração de Energia Fotovoltaica (Solar) e Previsão para Gerador de até 35KVA.</li>
+                <li>**Hidráulica:** Instalações Hidráulicas e Hidrosanitário com Projetos Isométricos de cada ambiente e Metais.</li>
                 <li>**Design Interno:** Pintura Total e Rebaixamentos em Drywall.</li>
+                <li>**Iluminação:** Com nossa empresa parceira Ilumina Iluminação.</li>
             </ul>
-        </div>
+        </section>
 
         <div class="price-box">
             <h3>VALOR DE INVESTIMENTO (Sistema Monolítico)</h3>
-            <p class="price">R$ 510.000,00</p>
+            <p class="price">R$ 450.000,00</p>
             <p style="font-size: 1.1em;">
-                Economia de **R$ 50.000,00** comparado ao Método Tradicional.<br>
-                *(Construção no Método Tradicional: R$ 560.000,00, com prazo de até 15 meses)*
+                Economia de **R$ 110.000,00** comparado ao Método Tradicional.<br>
+                (Construção no Método Tradicional: R$ 560.000,00, podendo ser parcelado em até 18X, com prazo de até 15 meses para entrega total).
             </p>
         </div>
 
-        <div class="section">
-            <h2 id="condicoes">💰 Condições de Pagamento e Vantagens Exclusivas</h2>
+        <section class="content-section">
+            <h2 class="section-title" id="condicoes">💰 Condições de Pagamento e Vantagens Exclusivas</h2>
             <ul class="offer-list">
-                <li>**NÃO SOLICITAMOS VALORES DE ENTRADA.** ✍🏼</li>
-                <li>**Parcelamento em até 16X** diretamente conosco.</li>
-                <li>**SEU ORÇAMENTO VÁLIDO DO INÍCIO AO FIM, SEM ADITIVOS DE OBRA.** ✍🏼</li>
-                <li>**TODA a Legalização por Nossa Conta:** Projetos Complementares, Licenciamento Ambiental e Habite-se. ✍🏼</li>
-                <li>Contrato assinado diretamente com nosso Setor Jurídico.</li>
+                <li>**Forma de Pagamento:** Podendo ser parcelado em até 16X diretamente conosco.</li>
+                <li>**NÃO SOLICITAMOS VALORES DE ENTRADA.**</li>
+                <li>**SEU ORÇAMENTO VÁLIDO DO INÍCIO AO FIM, SEM ADITIVOS DE OBRA.**</li>
+                <li>**TODA a Legalização por Nossa Conta:** Projetos Complementares, Licenciamento Ambiental e Habite-se.</li>
+                <li>Contrato assinado diretamente com nossa Acessória Jurídica.</li>
             </ul>
-            <p style="text-align: center; font-style: italic; margin-top: 20px;">*Promoção de Novembro de 2025. A data de entrega é contada a partir da assinatura do contrato.*</p>
-        </div>
+            <p style="text-align: center; font-style: italic; margin-top: 20px;">
+                *Promoção de Novembro de 2025.*<br>
+                A data de entrega começa à ser contada à partir da assinatura do contrato com nosso setor jurídico.
+            </p>
+        </section>
 
-        <div class="contact">
+        <footer class="contact-footer">
             <h2>Quer saber mais? Fale Conosco Agora!</h2>
-            <p>Será um prazer receber você em nossa fábrica em Três Rios/RJ, na região serrana do Rio, para apresentar nossos projetos em andamento.</p>
-            <a href="https://wa.me/SEUNUMEROTELEFONE?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Casa%20Tipo%2002%20(R%24%20510.000%2C00)%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20parcelamento%20em%2016x.">CLIQUE AQUI E CHAME NO WHATSAPP PRIVADO</a>
-            <p style="font-size: 0.9em; margin-top: 20px;">*Lembre-se de trocar "SEUNUMEROTELEFONE" no link acima.*</p>
-        </div>
+            <p>Para aqueles que tenham dúvidas, será um prazer recebê-los em nossa fábrica na região Serrana do Rio, na cidade de Três Rios (30 minutos depois de Itaipava/Petrópolis).</p>
+            <p>Lá poderemos apresentar, entre outros, nossos projetos em andamento e fazer uma visita em algumas de nossas obras.</p>
+            <a href="https://wa.me/5521965125138?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Planta%2002%20(R%24%20450.000%2C00)%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20parcelamento%20em%2016x.">CLIQUE AQUI E CHAME NO WHATSAPP PRIVADO</a>
+        </footer>
         
     </div>
 
