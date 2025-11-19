@@ -3,218 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anúncio Blue Lake - EngeTec ZAPI</title>
+    <title>Sua Experiência Exclusiva - Neguin du Corte</title>
     <style>
-        /* Variáveis de Cores do Site */
-        :root {
-            --primary-color: #001F3F; /* Azul Marinho Profundo (Autoridade e Oceano) */
-            --secondary-color: #CC9900; /* Dourado Suave (Luxo) */
-            --saving-color: #900C3F; /* Cor para destaque de economia (Vermelho vinho) */
-            --bg-ad: #E0E8F0; /* Fundo mais claro para contraste */
-            --text-light: #FFFFFF;
-        }
-
-        /* Container Principal: Simula o formato vertical de Story/Post */
+        /* Estilos Base - Mantidos do anterior */
         body {
-            font-family: 'Montserrat', 'Roboto', 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-ad);
+            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
-        .ad-container {
-            width: 100%;
-            max-width: 500px; /* Largura típica para um post */
-            aspect-ratio: 9/16; /* Formato Story/Reel */
-            background: linear-gradient(180deg, rgba(0, 31, 63, 0.8) 0%, rgba(144, 12, 63, 0.7) 100%), url('fundo-texturizado-obra-ou-praia.jpg');
-            background-size: cover;
-            background-position: center;
-            color: var(--text-light);
-            padding: 40px 20px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        .container {
+            max-width: 450px;
+            width: 90%;
+            background-color: #1c1c1c; 
+            color: #e0e0e0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             text-align: center;
-            border-radius: 10px; /* Bordas arredondadas para o preview */
-            overflow: hidden;
         }
-
-        /* Topo e Título */
-        .header-ad {
-            margin-bottom: 30px;
+        h2 {
+            color: #d4a75e; 
+            margin-bottom: 5px;
+            font-weight: 300;
         }
-        .header-ad h1 {
-            font-size: 2.2em;
-            font-weight: 900;
-            line-height: 1.2;
-            text-transform: uppercase;
-            color: var(--text-light);
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        .header-ad .subtitle {
-            font-size: 1.1em;
-            color: var(--secondary-color);
-            font-weight: 700;
+        h3 {
+            color: #fff;
             margin-top: 5px;
         }
-
-        /* Seção de Destaques (Números) */
-        .highlights-box {
-            background-color: rgba(204, 153, 0, 0.1); /* Dourado transparente */
-            border: 1px solid var(--secondary-color);
-            padding: 20px 10px;
+        input[type="text"], input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #2c2c2c;
+            color: #fff;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            color: #aaa;
+        }
+        button {
+            background-color: #d4a75e; 
+            color: #1c1c1c;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #bfa05d;
+        }
+        #confirmacao-pix {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #252525;
+            border: 1px solid #d4a75e;
             border-radius: 8px;
-            margin: 20px 0;
+            text-align: left;
         }
-        .highlights-grid {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 15px;
+        .chave-pix {
+            font-weight: bold;
+            color: #d4a75e;
+            font-size: 1.2em;
+            display: block;
+            margin: 10px 0;
+            word-break: break-all;
         }
-        .highlight-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 5px;
-        }
-        .highlight-item .number {
-            font-size: 2.5em;
-            font-weight: 900;
-            color: var(--secondary-color);
-            line-height: 1;
-        }
-        .highlight-item .label {
+        .aviso-legal {
             font-size: 0.75em;
-            font-weight: 500;
-            color: var(--text-light);
-            margin-top: 5px;
+            color: #888;
+            margin-top: 15px;
+            line-height: 1.4;
+            text-align: center;
         }
-        .highlight-item .small-label {
-            font-size: 0.65em;
-            font-weight: 400;
-            color: #ddd;
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            margin-top: 15px;
+            width: 100%;
+        }
+        .whatsapp-button:hover {
+            background-color: #1eac54;
         }
 
-        /* Chamada para Ação (CTA) */
-        .cta-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            padding-top: 20px;
+        /* NOVOS ESTILOS */
+        .logo {
+            margin-bottom: 20px;
         }
-        .cta-button {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: 900;
-            text-decoration: none;
+        .logo img {
+            max-width: 200px; /* Ajuste o tamanho da logo */
+            height: auto;
+            border-radius: 50%; /* Opcional: para dar um toque mais arredondado */
+            border: 3px solid #d4a75e;
+        }
+        .indicacao-box {
+            background-color: #2c2c2c;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border-left: 5px solid #d4a75e;
+            text-align: left;
+        }
+        .indicacao-box h4 {
+            color: #d4a75e;
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .indicacao-box p {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+        .whatsapp-link {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s;
-            width: 90%;
-            max-width: 300px;
-        }
-        .cta-button:hover {
-            background-color: #b38600;
-        }
-
-        .cta-link {
-            font-size: 0.9em;
-            color: var(--text-light);
+            color: #25D366;
             text-decoration: none;
-            border-bottom: 2px solid var(--saving-color);
-            padding-bottom: 2px;
-            font-weight: 600;
+            font-weight: bold;
         }
-
-        /* Rodapé/Instrução */
-        .footer-ad {
-            margin-top: 40px;
+        .whatsapp-link img {
+            width: 20px;
+            margin-right: 5px;
         }
-        .footer-ad p {
-            font-size: 0.8em;
-            color: rgba(255, 255, 255, 0.7);
-            font-style: italic;
-        }
-        
-        /* Media Query para garantir que se ajusta bem em telas menores (prevenção) */
-        @media (max-width: 400px) {
-            .header-ad h1 { font-size: 1.8em; }
-            .highlight-item .number { font-size: 2em; }
-            .highlight-item .label { font-size: 0.7em; }
-            .cta-button { font-size: 1em; padding: 12px 25px; }
-        }
-
     </style>
 </head>
 <body>
 
-<div class="ad-container">
+<div class="container">
     
-    <div class="header-ad">
-        <p class="subtitle">SEU PRÓXIMO INVESTIMENTO DE LUXO EM CONSTRUÇÃO</p>
-        <h1>
-            OPORTUNIDADE BLUE LAKE:<br>
-            LUXO SEM SAIR DO ORÇAMENTO
-        </h1>
+    <div class="logo">
+        <img src="https://i.imgur.com/8QWvM7m.png" alt="Logo Neguin du Corte Barbearia">
     </div>
 
-    <div class="highlights-box">
-        <p style="font-size: 1em; font-weight: 600; margin-bottom: 15px; color: var(--text-light);">
-            GARANTIAS E VANTAGENS DO SISTEMA MONOLÍTICO
-        </p>
-        <div class="highlights-grid">
-            
-            <div class="highlight-item">
-                <div class="number">12</div>
-                <div class="label">MESES</div>
-                <div class="small-label">Prazo de Entrega Total</div>
-            </div>
+    <h2>Agendamento Premium</h2>
+    <h3>Reserve Sua Experiência</h3>
+    <p>Seu momento de corte exclusivo começa aqui. Garanta seu horário com o depósito de reserva.</p>
 
-            <div class="highlight-item">
-                <div class="number">20</div>
-                <div class="label">PARCELAS</div>
-                <div class="small-label">Sem Juros e Sem Entrada</div>
-            </div>
+    <form id="form-reserva">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="telefone">Telefone (WhatsApp com DDD):</label>
+        <input type="tel" id="telefone" name="telefone" required pattern="[0-9]{10,11}" placeholder="Ex: 21987654321">
+        
+        <button type="submit">Prosseguir para Confirmação e Pix</button>
+    </form>
 
-            <div class="highlight-item">
-                <div class="number">R$ 60K</div>
-                <div class="label" style="color: var(--saving-color);">ECONOMIA</div>
-                <div class="small-label">Comparado ao Convencional (Planta 02)</div>
-            </div>
-            
-        </div>
-    </div>
+    <div id="confirmacao-pix" style="display:none;">
+        <h3>Passo 2: Confirmação Imediata da Reserva</h3>
+        
+        <p>1. Efetue seu Pix de reserva (10% do valor do corte) para a chave:</p>
+        <span class="chave-pix">Chave Pix (Telefone): **21979934676**</span>
+        
+        <p style="margin-top: 20px;">2. Envie **o comprovante** via WhatsApp. Este é o único passo que garante a notificação imediata para o barbeiro e a confirmação do seu horário.</p>
 
-    <div class="cta-section">
-        <a href="[LINK DO WHATSAPP AQUI]" class="cta-button">
-            <i class="fas fa-hand-point-up"></i>
-            QUERO VER AS PLANTAS E CONDIÇÕES
+        <a id="link-whatsapp" href="#" target="_blank">
+            <button class="whatsapp-button">ENVIAR COMPROVANTE VIA WHATSAPP (Notificação Imediata)</button>
         </a>
         
-        <a href="#link-para-a-pagina-do-site" class="cta-link">
-            Visite nosso site para mais detalhes
-        </a>
+        <p style="margin-top: 15px; font-size: 0.9em; color: #d4a75e;">Sua reserva será validada e confirmada em instantes pelo nosso atendimento após o envio do comprovante.</p>
+
+        <p class="aviso-legal">
+            **Aviso de Cancelamento:** O valor de reserva (depósito) garante a exclusividade do seu horário. Em caso de não comparecimento ou cancelamento com menos de 3 horas de antecedência, o valor depositado não será reembolsado.
+        </p>
     </div>
     
-    <div class="footer-ad">
-        <p>Desenvolvido por EngeTec & ZAPI Soluções. Oferta válida por tempo limitado.</p>
-        <p>Deslize para cima para ver o formulário de contato (simulação de Story/Reel)</p>
+    <div class="indicacao-box">
+        <h4>🚕 Precisa de um Motorista Uber?</h4>
+        <p>Garantimos sua chegada com segurança e pontualidade. Temos uma indicação de confiança na região, sempre disponível para nossos clientes exclusivos. Fale direto com o motorista:</p>
+        <a href="https://wa.me/5521994475860" target="_blank" class="whatsapp-link">
+            🟢 **WhatsApp Motorista: +55 21 99447-5860**
+        </a>
+    </div>
+
+    <div class="indicacao-box">
+        <h4>🍻 Precisando de uma Gelada?</h4>
+        <p>Para o seu conforto, indicamos o depósito de bebidas parceiro que realiza delivery rápido e seguro na região. Confiança garantida pelo Neguin du Corte. Peça agora:</p>
+        <a href="https://wa.me/SEU_NUMERO_DO_DEPOSITO_AQUI" target="_blank" class="whatsapp-link">
+            🟢 **WhatsApp Delivery: [NÚMERO DO DEPÓSITO]**
+        </a>
+        <p style="font-size: 0.7em; color: #777; margin-top: 5px;">(Substitua [NÚMERO DO DEPÓSITO] pelo contato real.)</p>
     </div>
 
 </div>
+
+<script>
+    document.getElementById('form-reserva').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const telefone = document.getElementById('telefone').value;
+
+        // Esconde formulário e mostra o Pix
+        document.getElementById('form-reserva').style.display = 'none';
+        document.getElementById('confirmacao-pix').style.display = 'block';
+
+        // Cria a mensagem pré-preenchida para o WhatsApp de confirmação de reserva
+        const mensagemWhats = `Olá! Meu nome é ${nome} e telefone ${telefone}. Acabei de efetuar o Pix de reserva e estou enviando o comprovante para confirmar meu horário.`;
+        
+        // Link para o WhatsApp (número 21979934676 - Seu número)
+        const link = `https://wa.me/5521979934676?text=${encodeURIComponent(mensagemWhats)}`;
+        
+        document.getElementById('link-whatsapp').href = link;
+        
+    });
+</script>
 
 </body>
 </html>
